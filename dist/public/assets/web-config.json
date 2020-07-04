@@ -1,0 +1,7 @@
+{
+  "UseSecurityProtocol": false,
+  "APISettings": {
+    "Address": "localhost",
+    "Port": "3000"
+  }
+}

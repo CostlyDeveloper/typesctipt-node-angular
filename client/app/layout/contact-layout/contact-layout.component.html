@@ -1,0 +1,43 @@
+<div class="form-container mx-2">
+    <div class="row no-gutters my-4">
+        <div class="col-md-12">
+            <h4>Contact us</h4>
+            <p>The beautiful newly built house is situated in a maintained and calm side street in Njivice.
+               It lies nearby the town center and the beach, whereby the beach can be attained comfortably on foot.
+               The house provides 2 above average furnished apartments. </p>
+               <p>Contact us in the form below:</p>
+        </div>
+    </div>
+    
+    <form [formGroup]="componentForm" autocomplete="off">
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="input-group-large mb-2">
+                    <label>Email</label>
+                        <input formControlName="Email" type="text" placeholder="Enter E-mail" class="form-control mb-2">
+                </div>
+                <div class="input-group-large mb-2">
+                    <label class="title">Message</label>
+                        <textarea formControlName="Message" rows="3" class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="col-md-6 mt-4">
+    
+                <div *ngIf="showNotification" [ngClass]="notification.Title === 'Success' ? 'alert-success' : 'alert-danger' " class="alert">
+                    
+                    <h5>{{notification.Message}}</h5>
+                    <p>{{notification.Description}}</p>
+                </div>
+                
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-md-6">
+                <button class="btn btn-primary" (click)="submitForm(componentForm.value)">Send</button>
+            </div>
+            
+        </div>
+    </form>
+
+</div>

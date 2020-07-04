@@ -1,0 +1,10 @@
+<div class="main-wrapper">
+    
+    <app-header></app-header>
+    <article class="content container">
+        <div [@routeAnimations]="getRouterOutletState(outlet)">
+            <router-outlet #outlet="outlet"></router-outlet>
+        </div>
+    </article>
+
+</div>

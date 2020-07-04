@@ -1,0 +1,18 @@
+<div class="header-wrapper container-fluid">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <span class="navbar-brand"><img class="img-fluid" [src]="imgRepo.getImg('LOGO').ImgSrc" [alt]="imgRepo.getImg('LOGO').Title"></span>
+            <button class="navbar-toggler float-right" type="button" (click)="mobMenuVisibility = (mobMenuVisibility === 'show') ? 'hide' : 'show'">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse" id="navbarSupportedContent" [@toggleHeight]="mobMenuVisibility">
+                <hr *ngIf="(mobMenuVisibility === 'show')" />
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item" *ngFor="let item of menuItems" routerLink="{{item.RouterLink}}">
+                        <a class="nav-link pointer">{{item.Title}}</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
